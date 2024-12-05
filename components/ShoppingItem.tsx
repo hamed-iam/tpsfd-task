@@ -11,6 +11,7 @@ interface ShoppingItemProps {
 
 const ShoppingItem = ({ item, onToggle }: ShoppingItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const toggleExpanded = () => setIsExpanded((prev) => !prev);
 
@@ -20,12 +21,19 @@ const ShoppingItem = ({ item, onToggle }: ShoppingItemProps) => {
   return (
     <div className="relative flex items-center space-x-4 rounded-lg border px-3 py-5 shadow-md">
       <section className="flex flex-col items-center gap-1">
+        {!isImageLoaded && (
+          <div className="h-12 w-12 animate-pulse rounded-full bg-gray-300"></div>
+        )}
+
         <Image
           src={item.base64Image || "/images/fallback.png"}
           alt={item.title}
           width={50}
           height={50}
-          className="h-12 w-12 object-cover"
+          className={`object-cover ${
+            isImageLoaded ? "h-12 w-12 opacity-100" : "h-0 w-0 opacity-0"
+          } transition-opacity duration-300`}
+          onLoad={() => setIsImageLoaded(true)}
         />
         <span className="font-bold"> {item.price || ""}</span>
       </section>
