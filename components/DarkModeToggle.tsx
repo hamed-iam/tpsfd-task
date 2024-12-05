@@ -1,12 +1,12 @@
 import { Moon, Sun } from "lucide-react";
 import { RefAttributes, useState } from "react";
-import { Button, type ButtonProps } from "./ui/button";
+import { Button, type ButtonProps } from "./ui";
 
 interface DarkModeToggleProps {
   buttonProps?: ButtonProps & RefAttributes<HTMLButtonElement>;
 }
 
-export const DarkModeToggle = ({ buttonProps }: DarkModeToggleProps) => {
+export default function DarkModeToggle({ buttonProps }: DarkModeToggleProps) {
   const [isDark, setIsDark] = useState(false);
 
   const toggleDarkMode = () => {
@@ -24,4 +24,4 @@ export const DarkModeToggle = ({ buttonProps }: DarkModeToggleProps) => {
       {isDark ? <Sun /> : <Moon />}
     </Button>
   );
-};
+}
