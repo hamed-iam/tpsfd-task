@@ -78,7 +78,7 @@ export default function Home() {
   );
 
   return (
-    <div className="space-y-4 p-4">
+    <div className="p-4">
       <Header
         inputValue={inputValue}
         searchQuery={searchQuery}
