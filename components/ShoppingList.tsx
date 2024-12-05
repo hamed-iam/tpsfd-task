@@ -16,7 +16,7 @@ export default function ShoppingList({
   return (
     <div
       ref={itemsContainerRef}
-      className="max-h-[calc(100vh-100px)] space-y-2 overflow-y-auto px-2 pb-8 pt-28"
+      className="max-h-[calc(100vh-100px)] space-y-2 overflow-y-auto px-2 pb-14 pt-32 sm:pb-8"
     >
       {(data || []).map((item) => (
         <ShoppingItem
