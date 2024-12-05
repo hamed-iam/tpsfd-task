@@ -32,6 +32,7 @@ If you want to build the project using Docker:
    - Delete all checked items using the Trash button (conditionally rendered at the top).
 3. **Image Handling**:
    - Product images are lazy-loaded.
+   - Product images has a fallback in case of error.
    - A custom skeleton is displayed as a placeholder during loading.
    - Newly added items default to fallback.png for the image.
 

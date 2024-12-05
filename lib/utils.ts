@@ -15,3 +15,13 @@ export function debounce<T extends (...args: any[]) => void>(
     timeout = window.setTimeout(() => func(...args), delay);
   };
 }
+
+export const getTruncatedDescription = (
+  text: string,
+  limit: number,
+  isExpanded: boolean,
+): string => {
+  return text.length > limit && !isExpanded
+    ? `${text.slice(0, limit)}...`
+    : text;
+};

@@ -39,6 +39,8 @@ export default function Home() {
 
     setItems((prev) => {
       const updatedItems = [...prev, { ...newItem, id: Date.now().toString() }];
+
+      // TODO: this can also be done with requestAnimationFrame() but a simple timeout is also good.
       setTimeout(() => {
         itemsContainerRef.current?.scrollTo({
           top: itemsContainerRef.current.scrollHeight,
