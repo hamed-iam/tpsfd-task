@@ -4,6 +4,7 @@ import { ChangeEvent, useMemo, useRef, useState } from "react";
 
 import data from "@/data/products.json";
 import { type NewProduct } from "@/data/types";
+import { useToast } from "@/hooks/use-toast";
 
 import Header from "@/components/Header";
 import ShoppingList from "@/components/ShoppingList";
@@ -18,6 +19,7 @@ export default function Home() {
   );
 
   const itemsContainerRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
 
   const debouncedSetSearchQuery = useMemo(
     () =>
@@ -46,6 +48,11 @@ export default function Home() {
           top: itemsContainerRef.current.scrollHeight,
           behavior: "smooth",
         });
+        toast({
+          title: "List updated",
+          description: `${title} has been added to the list`,
+          duration: 2000,
+        });
       }, 0);
       return updatedItems;
     });
@@ -59,8 +66,15 @@ export default function Home() {
     );
   };
 
-  const handleDeleteChecked = () =>
+  const handleDeleteChecked = () => {
     setItems((prev) => prev.filter((item) => !item.checked));
+    toast({
+      title: "List updated",
+      description: "Removed from the list",
+      duration: 2000,
+      variant: "destructive",
+    });
+  };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
