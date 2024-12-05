@@ -17,18 +17,14 @@ const AddItemForm = ({ onAdd }: AddItemFormProps) => {
   };
 
   return (
-    <div className="flex items-center space-x-2 rounded-lg p-2 shadow-sm">
+    <div className="flex items-center space-x-2 p-4">
       <Input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Add new item"
-        className="flex-grow rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
 
-      <Button
-        onClick={handleAdd}
-        className="transform rounded-md px-4 py-2 text-white transition-transform hover:scale-105 active:scale-95"
-      >
+      <Button onClick={handleAdd} disabled={!inputValue}>
         Add
       </Button>
     </div>
