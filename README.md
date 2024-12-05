@@ -2,7 +2,9 @@
 
 ### This project is built with the following technologies:
 
-- [Next.js](https://nextjs.org)14 bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)
+**Project was built according to** [specifications and requirements](https://interview-assignment-shopping-list.vercel.app/)
+
+- [Nextjs14](https://nextjs.org) bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app)
 - TypeScript
 - Tailwind CSS
 - shadcn for UI components
