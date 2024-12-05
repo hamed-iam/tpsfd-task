@@ -30,6 +30,7 @@ If you want to build the project using Docker:
    - Add new items using the input field and button at the bottom.
    - Check/uncheck items.
    - Delete all checked items using the Trash button (conditionally rendered at the top).
+   - Show toast when adding or deleting item.
 3. **Image Handling**:
    - Product images are lazy-loaded.
    - Product images has a fallback in case of error.
