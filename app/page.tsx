@@ -1,13 +1,14 @@
 "use client";
 
 import { ChangeEvent, useMemo, useRef, useState } from "react";
-import { debounce } from "@/utils/debounce";
+
 import data from "@/data/products.json";
 import { type NewProduct } from "@/data/types";
 
 import Header from "@/components/Header";
 import ShoppingList from "@/components/ShoppingList";
 import AddItemForm from "@/components/AddItemForm";
+import { debounce } from "@/lib/utils";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
