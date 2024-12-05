@@ -16,16 +16,23 @@ export default function AddItemForm({ onAdd }: AddItemFormProps) {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 z-10 flex w-full items-center space-x-2 border bg-white p-4 dark:bg-black">
-      <Input
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Add new item"
-      />
+    <div className="fixed bottom-0 left-0 z-10 w-full border bg-white p-4 dark:bg-black">
+      <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0">
+        <Input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Add new item"
+          className="w-full"
+        />
 
-      <Button onClick={handleAdd} disabled={!inputValue}>
-        Add
-      </Button>
+        <Button
+          onClick={handleAdd}
+          disabled={!inputValue}
+          className="w-full sm:w-auto"
+        >
+          Add
+        </Button>
+      </div>
     </div>
   );
 }
