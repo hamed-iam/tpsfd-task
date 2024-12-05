@@ -1,8 +1,12 @@
 import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
-import { Button } from "./ui/button";
+import { RefAttributes, useState } from "react";
+import { Button, type ButtonProps } from "./ui/button";
 
-export const DarkModeToggle = () => {
+interface DarkModeToggleProps {
+  buttonProps?: ButtonProps & RefAttributes<HTMLButtonElement>;
+}
+
+export const DarkModeToggle = ({ buttonProps }: DarkModeToggleProps) => {
   const [isDark, setIsDark] = useState(false);
 
   const toggleDarkMode = () => {
@@ -14,7 +18,8 @@ export const DarkModeToggle = () => {
     <Button
       size="icon"
       onClick={toggleDarkMode}
-      className="bg-gray-200 shadow-md dark:bg-gray-700"
+      variant="outline"
+      {...buttonProps}
     >
       {isDark ? <Sun /> : <Moon />}
     </Button>
