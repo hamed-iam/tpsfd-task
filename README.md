@@ -48,6 +48,41 @@ If you want to build the project using Docker:
 5. **Description Toggling**:
    - Long descriptions are truncated by default. A Show More / Show Less button allows toggling for better readability.
 
+## Structure
+
+Given the relatively simple nature of the project, I opted for a conventional, standard structure. UI components are organized under `@/components/ui`, while other components, such as `ShoppingListItem`, are placed under `@/components`. Utility functions are housed in the `lib` directory, though they could be split into a separate folder, this was deemed unnecessary for the scale of the project. Since an API endpoint was not provided, I used static data, stored in `@/data/products.json`, with types defined in `@/data/types.ts` Additionally, I integrated the `prettier-plugin-tailwindcss` to ensure consistent styling order for TailwindCSS.
+
+```
+├── app
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── globals.css
+│   ├── fonts
+│   │   ├── **/*.woff
+├── components
+│   ├── ui
+│   │   ├── **/*.tsx
+│   ├── **/*.tsx
+├── data
+│   │   ├── **/*.json
+│   │   ├── **/*.ts
+├── public
+│   ├── images
+│   │   ├── **/*.png
+├── next.config
+├── Dockerfile
+├── tsconfig.json
+├── components.json
+├── tailwind.config.ts
+├── package.json
+├── package-lock.json
+├── README
+├── .eslintrc
+├── .prettierrc
+├── .node-version
+└── .gitignore
+```
+
 ## Online Demo
 
 Access the **live demo** here: [Tapsi Food Task](https://tpsfd-task.vercel.app/)
